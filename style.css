@@ -1,0 +1,19 @@
+#btnSubmit{
+    background-color: #FF4A00; 
+    color: white;
+    transition: color 0.3s ease-in-out;
+    border-style: none;
+}
+#btnSubmit:hover{
+    background-color: #FF4A00; 
+    color: rgb(0, 0, 0);
+}
+nav{
+    height: 70px;
+}
+.nav-link{
+    font-weight: 500;
+}
+.nav-link:hover,#nav-active{
+    color: #ff0000;  
+}
