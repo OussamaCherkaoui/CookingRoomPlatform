@@ -8,104 +8,148 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-<div class="container">
-    <div class="title">
-        <h1>Recipe Details</h1>
-    </div>
-    <section class="row">
-        <div class="col-md-5">
-            <img src="../Images/PIZZA.jpg" class="img-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-white px-5 ">
+    <div class="container-fluid">
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-5 mt-lg-0" href="#">
+                <img
+                        src="../Images/logo-dark.png"
+                        height="30"
+                        alt="logo Cooking room"
+                        loading="lazy"
+                        width="110"
+                />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav mb-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="./home.html">Home</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="./all_recipes.html" id="nav-active">All Recipes</a>
+                </li>
+            </ul>
+            <!-- Left links -->
         </div>
-            <div class="content">
-                <div class="Title">
-                    <pre>Pizza Bar Mozzarella</pre>
-                </div>
-                <div class="description">
-                    <pre>The Pizza Bar Mozzarella is a classic pizza featuring fresh<br>
-                        mozzarella cheese, tangy tomato sauce, and aromatic Italian herbs<br>
-                        on a crispy crust. Its harmonious blend of flavors makes it a favorite<br>
-                        choice for pizza enthusiasts, offering irresistible taste and texture<br>
-                        in every bite.</pre>
-                </div>
-                <div class="direction">
-                    <div class="steps">
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <button class="btn d-flex align-items-center justify-content-center gap-2 rounded-4" id="btnSubmit">
+                <div class="fs-5 fw-bold plus">+</div>
+                <div class="text text-center ">Submit Recipe</div>
+            </button>
+        </div>
+    </div>
+</nav>
+<!-- Recipes Details Code  -->
+<div class="container-fluid contentDetails" >
+    <div class="title" style="color: #FF4A00; display: flex;justify-content: center;align-items: center;">
+        <h1>Recipe Details </h1>
+    </div>
+
+    <section class="row" id="section-1">
+        <div class="col-md-4" id="img-1" style="width: 45%; height: 100%; border-radius: 25px;"></div>
+        <article id="article">
+            <div class="Title" style="color:#FF4A00;display: flex ;justify-content: center;">
+                <p style="font-weight: bold ; font-size: 20px;">Pizza Bar Mozzarella</p>
+            </div>
+            <div class=" description" style="display: block ;font-weight: bold; font-size: 15px;">
+                <p style="text-align: left;">The Pizza Bar Mozzarella is a classic pizza featuring fresh
+                    mozzarella cheese, tangy tomato sauce, and aromatic Italian herbs
+                    on a crispy crust. Its harmonious blend of flavors makes it a favorite
+                    choice for pizza enthusiasts, offering irresistible taste and texture
+                    in every bite.</p>
+            </div>
+            <div class="Right" style="height: auto; width: auto;">
+                <div class="all" style="background-color:#E4E4E4 "></div>
+                <div class="direction " style=" display: flex;justify-content: space-between;">
+                    <div class="stepse" style="  width: 40%;display: flex;justify-content: space-around;align-items: center;color: black;background-color:#E4E4E4  ;">
                         <img src="../Images/Details.png">
-                        <pre>Ingredients / Steps</pre>
+                        <p>Ingredients / Steps</p>
                     </div>
                 </div>
-                <div class="Ingredients">
-                    <h5>Ingredients</h5>
-                    <div class="DetailsIngredients">
-                        <pre>500 grams mozzarella cheese</pre>
-                        <pre>10 slices mushrooms</pre>
-                        <pre>3 bell peppers (assorted colors)</pre>
-                        <pre>1 tablespoon extra virgin olive oil</pre>
-                        <pre>1 teaspoon cornmeal (for dusting)</pre>
+
+                <div class="d-1">
+                    <div class="Ingredients">
+                        <h5>Ingredients</h5>
+                        <div class="DetailsIngredients">
+                            <p>500 grams mozzarella cheese</p>
+                            <p>10 slices mushrooms</p>
+                            <p>3 bell peppers (assorted colors)</p>
+                            <p>1 tablespoon extra virgin olive oil</p>
+                            <p>1 teaspoon cornmeal (for dusting)</p>
+                        </div>
                     </div>
+
+                    <div class="Steps">
+                        <h5>Steps</h5>
+                        <div class="DetailsSteps">
+                                <p>1. Mix flour, yeast, salt, water, and oil for pizza dough.</p>
+                                <p>2. Knead until smooth, let rise.</p>
+                                <p>3. Shred cheese, slice mushrooms, peppers.</p>
+                                <p>4. Roll out dough, add toppings.</p>
+                                <p>5. Bake until crust is golden, Cool slightly, slice,
+                                and enjoy!</p>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="Steps">
-                    <h5>Steps</h5>
-                    <div class="DetailsSteps">
-                        <div class="step">
-                            <pre>1. Mix flour, yeast, salt, water, and oil for pizza dough.</pre>
-                        </div>
-                        <div class="step">
-                            <pre>2. Knead until smooth, let rise.</pre>
-                        </div>
-                        <div class="step">
-                            <pre>3. Shred cheese, slice mushrooms, peppers.</pre>
-                        </div>
-                        <div class="step">
-                            <pre>4. Roll out dough, add toppings.</pre>
-                        </div>
-                        <div class="step">
-                            <pre>5. Bake until crust is golden, Cool slightly, slice, and enjoy!</pre>
+                <div class="PrepAndCook" style=" display: flex; justify-content: center;">
+                    <div class="preparation" style="display: flex;justify-content: flex-end;  background-color: white;">
+                        <img src="../Images/Time.png">
+                        <div class="preparationTime">
+                            <pre>Prep Time</pre>
+                            <pre>05 Mins</pre>
                         </div>
                     </div>
-                </div>
-                <div class="preparation">
-                    <img src="../Images/Time.png">
-                    <div class="preparationTime">
-                        <pre>Prep Time</pre>
-                        <pre>05 Mins</pre>
-                    </div>
-                </div>
-                <div class="cooking">
-                    <img src="../Images/Cook.png">
-                    <div class="cookingTime">
-                        <pre>Cook Time</pre>
-                        <pre>20 Mins</pre>
-                    </div>
-                </div>
-                <div class="Reply">
-                    <h5>Leave a Reply</h5>
-                    <div class="comment">
-                        <pre>Your comment</pre>
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                    <div class="Rate">
-                        <div class="rating">
-                            <pre>Your rate</pre>
+                    <div class="cooking " style="display: flex;justify-content: flex-end;background-color: white;">
+                        <img src="../Images/Cook.png">
+                        <div class="cookingTime">
+                            <pre>Cook Time</pre>
+                            <pre>20 Mins</pre>
                         </div>
-                        <div class="stars">
-                            <img src="../Images/star.png">
-                            <img src="../Images/star.png">
-                            <img src="../Images/blackstar.png">
-                            <img src="../Images/blackstar.png">
-                            <img src="../Images/blackstar.png">
-                        </div>
-                    </div>
-                    <div class="submit">
-                        <button class="submitAll ">
-                            <a href="#">Submit</a>
-                        </button>
                     </div>
                 </div>
             </div>
+        </article>
     </section>
+    <div class="container-fluid Reply" style="background-color:#E4E4E4 ;">
+        <h5 class="Reply" style="color: #FF4A00 ; font-weight: bold ;font-size: 20px">Leave a Reply</h5>
+        <div class="comment " style="margin-left: 80px">
+            <pre style="font-weight: bold">Your comment</pre>
+            <input type="text" class="form-control" style="height:80px;margin-left: 110px ;width: 700px ;" placeholder="">
+        </div>
+        <div class="Rate">
+            <div class="rating" style="margin-left: 80px ;">
+                <pre style="font-weight: bold ;margin: 0;" >Your rate</pre>
+            </div>
+            <div class="stars" style=" margin-left: 190px;" >
+                <img src="../Images/star.png" class="img-fluid" style="width: 30px ;">
+                <img src="../Images/star.png" class="img-fluid" style="width: 30px ;">
+                <img src="../Images/blackstar.png" class="img-fluid" style="width: 30px ;">
+                <img src="../Images/blackstar.png" class="img-fluid" style="width: 30px ;">
+                <img src="../Images/blackstar.png" class="img-fluid" style="width: 30px ;">
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" style="background-color:#FF4A00;border-color: #FF4A00 ; margin-left: 190px; margin-top: 25px ;border-radius: 15px ;font-weight: 500 ;" >Submit</button>
+
+
+    </div>
 </div>
-<script src="/script.js"></script>
-</body>
-</html>
 
 
