@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/js/bootstrap.min.js">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white px-5 ">
+    <div class="container-fluid">
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-5 mt-lg-0" href="#">
+                <img
+                        src="../Images/logo-dark.png"
+                        height="30"
+                        alt="logo Cooking room"
+                        loading="lazy"
+                        width="110"
+                />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav mb-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="./home.html">Home</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="./all_recipes.html" id="nav-active">All Recipes</a>
+                </li>
+            </ul>
+            <!-- Left links -->
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
+            <button class="btn d-flex align-items-center justify-content-center gap-2 rounded-4" id="btnSubmit">
+                <div class="fs-5 fw-bold plus">+</div>
+                <div class="text text-center ">Submit Recipe</div>
+            </button>
+        </div>
+    </div>
+</nav>
+<!-- Submit a Recipe -->
+<div class="container-fluid back">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Submit a Recipe</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 style="font-size: 30px">Recipe Title</h2>
+            <input type="text" class="form-control input-narrow " style="border-color: #FF4A00; width: 50%;margin-left:200px;" placeholder="">
+        </div>
+        <div class="col-md-6">
+            <h2 style="font-size: 30px">Description </h2>
+            <input type="email" class="form-control input-narrow"  style="border-color: #FF4A00; width: 50%;margin-left:200px"; placeholder="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 style="font-size: 30px">Ingredients</h2>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <input type="text" class="form-control mb-2"  style="border-color: #FF4A00; width: 70%;margin-left:200px;" placeholder="">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:110px;" placeholder="">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:20px;" placeholder="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:200px;" placeholder="">
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:-95px;" placeholder="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 style="font-size: 30px">Steps</h2>
+        </div>
+    </div>
+   <div class="row mt-4">
+    <div class="col-md-4">
+        <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:200px; "placeholder="">
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control mb-2"  style="border-color: #FF4A00; width: 70%;margin-left:110px;" placeholder="">
+    </div>
+    <div class="col-md-4">
+        <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:20px"; placeholder="">
+    </div>
+</div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:200px;" placeholder="">
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:-95px;" placeholder="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2 style="font-size: 30px">Image</h2>
+            <input type="file" class="form-control-file" id="imageUpload" accept="image/*">
+        </div>
+        <div class="col-md-6">
+            <img src="#" id="previewImage" class="img-fluid mt-2" style="display: none;" alt="">
+        </div>
+    </div>
+    <p style="font-weight: 300;"> PNG or JPEG,max 10MB</p>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h2>Category </h2>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Choose Category</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Category 1</a></li>
+                    <li><a class="dropdown-item" href="#">Category 2</a></li>
+                    <li><a class="dropdown-item" href="#">Category 3</a></li>
+                    <li><a class="dropdown-item" href="#">Category 4</a></li>
+                    <li><a class="dropdown-item" href="#">Category 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-12 text-center">
+            <button id="btn-submitrecipe" type="submit" class="btn btn-primary" style="width: 200px;background-color: #FF4A00;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 10px;">Submit A Recipe</button>
+        </div>
+    </div>
+</div>
+</body>
+<footer class="text-center">
+    <div class="container">
+        <div class="logo-container">
+            <img src="../Images/logo-light.png" alt="Site Logo">
+        </div>
+        <ul class="social-icons">
+            <li>
+                <img src=" ../Images/facebook.png" alt="Facebook Logo">
+                <span>1,000,000 followers</span>
+            </li>
+            <li>
+                <img src="../Images/twitter.png" alt="Twitter Logo">
+                <span>300,000 followers</span>
+
+            </li>
+            <li>
+                <img src="../Images/pinterest.png" alt="pinterest Logo">
+                <span>400,000 followers</span>
+
+            </li>
+            <li>
+                <img src="../Images/dribbble.png" alt="dribbble Logo">
+                <span>700,000 followers</span>
+            </li>
+            <li>
+                <img src="../Images/instagram.png" alt="Instagram Logo">
+                <span>500,000 followers</span>
+            </li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </div>
+</footer>
+</html>
