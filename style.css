@@ -17,14 +17,7 @@ nav{
 .nav-link:hover,#nav-active{
     color: #ff0000;
 }
-/* submit Css */
-.col-md-5{
-    border-radius: 3px;
-}
-
-.contentDetails{
-
-}
+/* Recipe details  */
 
 #section-1{
     width: 100%;
@@ -62,6 +55,8 @@ nav{
     color: black;
     background-color:#E4E4E4  ;
 }
+
+/* Footer */
 footer {
     background-color: #000000;
     color: #B8B8B8;
