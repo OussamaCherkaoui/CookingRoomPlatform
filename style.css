@@ -95,7 +95,7 @@ button:hover {
 }
 
 /* Submit A Recipe */
-body {
+body  {
 
     margin: 0;
     padding: 20px;
@@ -107,7 +107,7 @@ body {
 
 }
 
-h1 {
+#submitRecipeTitle {
     text-align: center;
     margin-bottom: 20px;
     color: #FF4A00;
