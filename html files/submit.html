@@ -60,18 +60,18 @@
 <!-- Submit a Recipe -->
 <div class="container-fluid back">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h1>Submit a Recipe</h1>
+        <div class="col-md-12 text-center ">
+            <h1 style="margin-top: 40px;">Submit a Recipe</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <h2 style="font-size: 30px">Recipe Title</h2>
-            <input type="text" class="form-control input-narrow " style="border-color: #FF4A00; width: 50%;margin-left:200px;" placeholder="">
+            <h2 style="font-size: 30px; margin-top: 37px;">Recipe Title</h2>
+            <input type="text" class="form-control input-narrow " style="border-color: #FF4A00; width: 50%;margin-left:200px;background-color: #F5F5F5;" placeholder="">
         </div>
         <div class="col-md-6">
-            <h2 style="font-size: 30px">Description </h2>
-            <input type="email" class="form-control input-narrow"  style="border-color: #FF4A00; width: 50%;margin-left:200px"; placeholder="">
+            <h2 style="font-size: 30px ; margin-top: 40px;">Description </h2>
+            <input type="email" class="form-control input-narrow"  style="border-color: #FF4A00; width: 52%;margin-left:184px ;background-color: #F5F5F5;"; placeholder="">
         </div>
     </div>
     <div class="row mt-4">
@@ -81,21 +81,21 @@
     </div>
     <div class="row mt-4">
         <div class="col-md-4">
-            <input type="text" class="form-control mb-2"  style="border-color: #FF4A00; width: 70%;margin-left:200px;" placeholder="">
+            <input type="text" class="form-control mb-2"  style="border-color: #FF4A00; width: 70%;margin-left:200px; ;background-color: #F5F5F5;" placeholder="">
         </div>
         <div class="col-md-4">
-            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:110px;" placeholder="">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:110px; ;background-color: #F5F5F5;" placeholder="">
         </div>
         <div class="col-md-4">
-            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:20px;" placeholder="">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:20px; ;background-color: #F5F5F5;" placeholder="">
         </div>
     </div>
     <div class="row mt-4">
         <div class="col-md-6">
-            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:200px;" placeholder="">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:200px; ;background-color: #F5F5F5;" placeholder="">
         </div>
         <div class="col-md-6">
-            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:-95px;" placeholder="">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:-90px; ;background-color: #F5F5F5;" placeholder="">
         </div>
     </div>
     <div class="row mt-4">
@@ -105,55 +105,63 @@
     </div>
    <div class="row mt-4">
     <div class="col-md-4">
-        <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:200px; "placeholder="">
+        <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:200px;;background-color: #F5F5F5; "placeholder="">
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control mb-2"  style="border-color: #FF4A00; width: 70%;margin-left:110px;" placeholder="">
+        <input type="text" class="form-control mb-2"  style="border-color: #FF4A00; width: 70%;margin-left:110px;;background-color: #F5F5F5;" placeholder="">
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:20px"; placeholder="">
+        <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 70%;margin-left:20px;background-color: #F5F5F5;"; placeholder="">
     </div>
 </div>
     <div class="row mt-4">
         <div class="col-md-6">
-            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:200px;" placeholder="">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:200px;;background-color: #F5F5F5;" placeholder="">
         </div>
         <div class="col-md-6">
-            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:-95px;" placeholder="">
+            <input type="text" class="form-control mb-2" style="border-color: #FF4A00; width: 46%;margin-left:-90px;;background-color: #F5F5F5;" placeholder="">
         </div>
     </div>
     <div class="row mt-4">
         <div class="col-md-6">
             <h2 style="font-size: 30px">Image</h2>
-            <input type="file" class="form-control-file" id="imageUpload" accept="image/*">
+            <label for="imageUpload" class="btn btn-secondary" style="border: 1px solid #FF4A00; ;background-color: #F5F5F5;; color: #000; margin-left: 200px;">Upload photo</label>
+            <input type="file" class="form-control-file d-none" id="imageUpload" accept="image/*" style="border: 2px solid #FF4A00;">
         </div>
-        <div class="col-md-6">
-            <img src="#" id="previewImage" class="img-fluid mt-2" style="display: none;" alt="">
-        </div>
-    </div>
-    <p style="font-weight: 300;"> PNG or JPEG,max 10MB</p>
-    <div class="row mt-4">
-        <div class="col-md-6">
-            <h2>Category </h2>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Choose Category</button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Category 1</a></li>
-                    <li><a class="dropdown-item" href="#">Category 2</a></li>
-                    <li><a class="dropdown-item" href="#">Category 3</a></li>
-                    <li><a class="dropdown-item" href="#">Category 4</a></li>
-                    <li><a class="dropdown-item" href="#">Category 4</a></li>
-                </ul>
+        <div class="row mt-2">
+            <div class="col-md-6"></div>
+                <p style="font-size: 12px;margin-left: 200px;">PNG or JPEG, max 10MB</p>
             </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-12 text-center">
-            <button id="btn-submitrecipe" type="submit" class="btn btn-primary" style="width: 200px;background-color: #FF4A00;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 10px;">Submit A Recipe</button>
+    
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h2 style="font-size: 30px;margin-left: 14px;">Category</h2>
+                <div class="dropdown" style="border-color: #FF4A00; width: 90%;margin-left:210px;";>
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border: 1px solid #FF4A00; ;background-color: #F5F5F5;; color: #000;">
+                        Choose Category
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Category 1</a></li>
+                        <li><a class="dropdown-item" href="#">Category 2</a></li>
+                        <li><a class="dropdown-item" href="#">Category 3</a></li>
+                        <li><a class="dropdown-item" href="#">Category 4</a></li>
+                        <li><a class="dropdown-item" href="#">Category 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <button id="btn-submitrecipe" type="submit" class="btn btn-primary" style="width: 200px; background-color: #FF4A00; color: white; padding: 14px 20px; margin: 8px 0; border: none; border-radius: 10px;margin-bottom: 80px;">Submit A Recipe</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 </body>
 <footer class="text-center">
     <div class="container">
