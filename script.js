@@ -44,9 +44,8 @@ function createPaginationLink(pageNumber, isActive = false) {
   return li;
 }
 
-function createPagination() {
+function createPagination(totalPages) {
   paginationContainer.innerHTML = ''; 
-
 
   const prevLink = createPaginationLink('Previous');
   paginationContainer.appendChild(prevLink);
@@ -69,6 +68,7 @@ category.forEach(cat => {
   link.setAttribute('data-category', cat);
   
   link.addEventListener('click', function() {
+    searchInput.value=""; 
     const selectedCategory = this.getAttribute('data-category');
     filterRecipesByCategory(selectedCategory);
   });
@@ -78,7 +78,12 @@ category.forEach(cat => {
 
 function filterRecipesByCategory(category) {
   const filteredRecipes = recipes.filter(recipe => recipe.category === category);
-  displayRecipeCards(filteredRecipes,1);
+  currentPage=1;
+  displayRecipeCards(filteredRecipes,currentPage);
+
+  const totalFilteredRecipes = filteredRecipes.length;
+  const totalPagesFiltered = Math.ceil(totalFilteredRecipes / recipesPerPage);
+  createPagination(totalPagesFiltered);
 }
 
 function createRecipeCard(recipe) {
@@ -139,6 +144,12 @@ function displayRecipeCards(recipes,page) {
     const card = createRecipeCard(recipe);
     recipeContainer.appendChild(card);
   });
+  const totalDisplayedRecipes = recipes.length;
+  const totalPagesDisplayed = Math.ceil(totalDisplayedRecipes / recipesPerPage);
+
+ 
+  createPagination(totalPagesDisplayed);
+  paginationSwitched(recipes)
 }
 
 function handlePageClick(page) {
@@ -147,10 +158,10 @@ function handlePageClick(page) {
 }
 
 displayRecipeCards(recipes,currentPage);
-createPagination();
 
-const paginationLinks = document.querySelectorAll('.page-link');
-paginationLinks.forEach(link => {
+function paginationSwitched(recipes){
+  const paginationLinks = document.querySelectorAll('.page-link');
+  paginationLinks.forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();
     const page = parseInt(this.textContent); // Get the page number from the link text
@@ -163,13 +174,14 @@ paginationLinks.forEach(link => {
     }
   });
 });
+}
 
 function searchRecipes() {
   const searchTerm = searchInput.value.trim().toLowerCase(); 
   const filteredRecipes = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchTerm));
-  displayRecipeCards(filteredRecipes,1);
+  currentPage=1;
+  displayRecipeCards(filteredRecipes,currentPage);
 }
-
 
 searchInput.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') {
