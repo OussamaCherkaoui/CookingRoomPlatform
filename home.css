@@ -9,6 +9,7 @@
     color: rgb(0, 0, 0);
 }
 
+
 .navbar{
     height: 70px;
 }
@@ -18,9 +19,7 @@
 .nav-link:hover,#nav-active{
     color: #ff0000;  
 }
-.search{
-    background-color: #EFEFEF;
-}
+
 body{
     margin: 0 ;
 }
@@ -35,29 +34,67 @@ body{
     width: 120px;
     margin-top: 20px;
 }
-.recipe{
-    width: 300px;
-    background-color: #EEE4E0;
-    padding: 0;
-    margin: 20px;
-    border-radius: 12px;
+
+
+.hero-header img {
+    animation: imgRotate 50s linear infinite;
 }
-.etoile{
-    margin-left: 15px;
+
+@keyframes imgRotate { 
+    100% { 
+        transform: rotate(360deg); 
+    } 
 }
-.page-item.active .page-link {
+
+
+.btn {
+    transition: 1s;
+}
+#book-table-btn{
+    background-color: #FF4A00;
+    border: #FF4A00 2px solid;
+}
+#book-table-btn:hover{
+    background-color: transparent;
+    color: #FF4A00;
+
+}
+
+
+/*about us*/
+
+#about-us{
+    color: #FF4A00;
+}
+
+#Years{
+    color: #FF4A00;
+}
+
+#read-more{
+    background-color: #FF4A00;
+    border: #FF4A00 2px solid;
     color: white;
-    background-color: black;
 }
-.page-link{
-    color: black;
+#read-more:hover{
+    background-color: transparent;
+    color: #FF4A00;
+
 }
+.border-custom-orange {
+    border-color: #FF4A00 !important;
+}
+
+
+ 
+
+
+
+/*footer*/
 footer {
     background-color: #000000;
     color: #B8B8B8; 
-    padding: 20px;
-    margin: 0;
-    width: 100%;
+    padding: 20px 0;
   }
   .social-icons {
     list-style: none;
@@ -75,7 +112,7 @@ footer {
   .logo-container {
     text-align: center;
     margin-bottom: 20px;
-  
+    margin-top: 40px;
   }
   .logo-container img {
     width: 150px; 
@@ -84,10 +121,5 @@ footer {
   .copyright {
     text-align: center;
     margin-top: 10px;
-  
+    margin-bottom:40px ;
   }
-svg.empty{
-    fill: transparent;
-    stroke: #000000;
-    stroke-width: 4px;
-}

@@ -1,3 +1,5 @@
+
+//tables recipes et category
 let recipes = [
     {title:"Lemon Dijon Vina igrette Kale Quinoa",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover in the fridge for a 3 hours","add an extra 1/2 tsp salt","Preheat oven to 220C for 7 Minutes"],image:"../Images/recette1.jpg",category:"Salad",commentaire:["Wooow c' est une belle repas !!","combien de miel faut ajouter ?"],rating:10},
     {title:"Pizza Bar Mozzarella",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a", ingredients:["500 gm Cheese","200 gm Flower","2 1/4 teaspoons Active dry yeast","3 3/4 cups Bread Flour","3 piece Bell peppers"],steps:["simply dummy text of the printing","Lorem Ipsum has been the industry's standard","It has survived not only five centuries"," but also the leap into electronic typesetting","remaining essentially unchanged"],image:"../Images/recette2.jpg",category:"Pizza",commentaire:["Wooow beautifull recipe !!","s' il vous plait eexppliquer moi la méthode"],rating:30},
@@ -23,11 +25,16 @@ const totalPages = Math.ceil(totalRecipes / recipesPerPage);
 
 const paginationContainer = document.querySelector('.pagination');
 const dropdownMenu = document.getElementById('icon_category');
+const dropdowncategorySubmit = document.getElementById('category-submit');
+const btnReadMoreRecipe =document.querySelectorAll('#btn-readMore');
+
+
 
 
 const searchInput = document.getElementById('search-Input');
 const searchButton = document.querySelector('.input-group-text');
 
+//creation des link des paginations
 function createPaginationLink(pageNumber, isActive = false) {
   const li = document.createElement('li');
   li.classList.add('page-item');
@@ -60,6 +67,8 @@ function createPagination(totalPages) {
   paginationContainer.appendChild(nextLink);
 }
 
+//remplir drop-down par des catégorie
+
 category.forEach(cat => {
   const link = document.createElement('a');
   link.classList.add('dropdown-item');
@@ -72,8 +81,7 @@ category.forEach(cat => {
     const selectedCategory = this.getAttribute('data-category');
     filterRecipesByCategory(selectedCategory);
   });
-
-  dropdownMenu.appendChild(link);
+    dropdownMenu.appendChild(link);
 });
 
 function filterRecipesByCategory(category) {
@@ -85,6 +93,8 @@ function filterRecipesByCategory(category) {
   const totalPagesFiltered = Math.ceil(totalFilteredRecipes / recipesPerPage);
   createPagination(totalPagesFiltered);
 }
+
+//création les cartes des recipes 
 
 function createRecipeCard(recipe) {
   const card = document.createElement('div');
@@ -101,9 +111,20 @@ function createRecipeCard(recipe) {
               </div>
 `;
 
+// Ajoutez un gestionnaire d'événements au bouton "Read more" pour chaque recette
+
+const btnReadMore = card.querySelector('#btn-readMore');
+  btnReadMore.addEventListener('click', () => {
+    window.location.href = `./RecipesDetails.html`;
+    displayRecipeDetails(recipe);
+  });
+
+
 return card;
 }
 
+
+//Affichages des étoiles necessaires
 function displayrating(recipe){
   const filledStar = `
   <svg fill="#FFD700" width="35px" height="35px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon" stroke="#FFD700"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 0 0 .6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0 0 46.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3z"></path> </g></svg>
@@ -131,7 +152,7 @@ if (recipe.rating === 0) {
  return starsHtml;
 }
 
-
+//Affichage des cartes des recettes 
 function displayRecipeCards(recipes,page) {
   const recipeContainer = document.getElementById('recipeContainer');
   recipeContainer.innerHTML = '';
@@ -152,6 +173,7 @@ function displayRecipeCards(recipes,page) {
   paginationSwitched(recipes)
 }
 
+//affichage des recettes selon la pagination
 function handlePageClick(page) {
   currentPage = page;
   displayRecipeCards(recipes,currentPage);
@@ -164,7 +186,7 @@ function paginationSwitched(recipes){
   paginationLinks.forEach(link => {
   link.addEventListener('click', function(event) {
     event.preventDefault();
-    const page = parseInt(this.textContent); // Get the page number from the link text
+    const page = parseInt(this.textContent); 
     if (!isNaN(page)) {
       handlePageClick(page);
     } else if (this.textContent === 'Previous' && currentPage > 1) {
@@ -176,6 +198,7 @@ function paginationSwitched(recipes){
 });
 }
 
+//chercher des recettes
 function searchRecipes() {
   const searchTerm = searchInput.value.trim().toLowerCase(); 
   const filteredRecipes = recipes.filter(recipe => recipe.title.toLowerCase().includes(searchTerm));
@@ -192,3 +215,92 @@ searchInput.addEventListener('keypress', function (e) {
 searchButton.addEventListener('click', function () {
   searchRecipes();
 });
+
+//function Submit a Recipe
+function submitRecipe() {
+    const recipeTitle = document.querySelector('#recipeTitle').value;
+    const recipeDescription = document.querySelector('#recipeDescription').value;
+    const ingredients = [...document.querySelectorAll('.form-control-ingredient')].map(input => input.value);
+    const steps = [...document.querySelectorAll('.form-control-step')].map(input => input.value);
+    const recipeImage = document.querySelector('#imageUpload').value; 
+    const recipeCategory = document.querySelector('#category').value;
+
+    const newRecipe = {
+        title: recipeTitle,
+        description: recipeDescription,
+        ingredients: ingredients,
+        steps: steps,
+        image: recipeImage,
+        category: recipeCategory,
+        
+    };
+    recipes.push(newRecipe);
+    displayRecipes();
+    document.querySelector('#recipeTitle').value = '';
+    document.querySelector('#recipeDescription').value = '';
+    document.querySelectorAll('.form-control-ingredient').forEach(input => input.value = '');
+    document.querySelectorAll('.form-control-step').forEach(input => input.value = '');
+    document.querySelector('#imageUpload').value = ''; 
+    document.querySelector('#category').value = '';
+}
+
+
+// Function display RecipeDetails
+function displayRecipeDetails(recipe){
+
+  const imageRecipe = document.getElementById('img-1');
+  imageRecipe.style.background = `url("${recipe.image}") no-repeat top center/cover`;
+    
+    const titledetail = document.getElementById('titleDetail');
+    titledetail.textContent = recipe.title;
+    
+    const descriptiondetail = document.getElementById('description');
+    descriptiondetail.textContent = recipe.description;
+
+
+    const ingredient1 = document.getElementById('ingredient1');
+    ingredient1=recipe.ingredients[0];
+    const ingredient2 = document.getElementById('ingredient2');
+    ingredient2=recipe.ingredients[1];
+    const ingredient3 = document.getElementById('ingredient3');
+    ingredient3=recipe.ingredients[2];
+    const ingredient4 = document.getElementById('ingredient4');
+    ingredient4=recipe.ingredients[3];
+    const ingredient5 = document.getElementById('ingredient5');
+    ingredient5=recipe.ingredients[4];
+    
+
+    const step1 = document.getElementById('step1');
+    step1=recipe.steps[0];
+    const step2 = document.getElementById('step2');
+    step2=recipe.steps[1];
+    const step3 = document.getElementById('step3');
+    step3=recipe.steps[2];
+    const step4 = document.getElementById('step4');
+    step4=recipe.steps[3];
+    const step5 = document.getElementById('step5');
+    step5=recipe.steps[4];
+
+    const stars = document.querySelector(".stars");
+    stars.innerHTML=`${displayrating(recipe)}`;
+    
+}
+
+
+//remplir categorie pour la page submit
+
+ 
+category.forEach(cat => {
+  const link = document.createElement('a');
+  link.classList.add('dropdown-item');
+  link.href = '#';
+  link.textContent = cat;
+  link.setAttribute('data-category', cat);
+  
+  link.addEventListener('click', function() {
+    const selectedCategory = this.getAttribute('data-category');
+  });
+
+  
+});
+
