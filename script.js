@@ -1,4 +1,29 @@
 
+// Filter recipes with top 3 ratings
+function getTopRatedRecipes(recipes) {
+    const sortedRecipes = recipes.slice().sort((a, b) => b.rating - a.rating);
+    // Return the top 3 recipes
+    return sortedRecipes.slice(0, 3);
+  }
+  
+  // Function to display top rated recipes on the home page
+  function displayTopRatedRecipes(recipes) {
+    const topRatedRecipes = getTopRatedRecipes(recipes);
+  
+    const topRatedContainer = document.getElementById('topRatedContainer');
+    topRatedContainer.innerHTML = ''; 
+  
+    topRatedRecipes.forEach(recipe => {
+      const card = createRecipeCard(recipe);
+      topRatedContainer.appendChild(card);
+    });
+  }
+  
+  // Call the function to display top rated recipes on page load
+  displayTopRatedRecipes(recipes);
+  
+
+
 let recipes = [
     {title:"Lemon Dijon Vina igrette Kale Quinoa",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover in the fridge for a 3 hours","add an extra 1/2 tsp salt","Preheat oven to 220C for 7 Minutes"],image:"../Images/recette1.jpg",category:"Salad",commentaire:["Wooow c' est une belle repas !!","combien de miel faut ajouter ?"],rating:10},
     {title:"Pizza Bar Mozzarella",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a", ingredients:["500 gm Cheese","200 gm Flower","2 1/4 teaspoons Active dry yeast","3 3/4 cups Bread Flour","3 piece Bell peppers"],steps:["simply dummy text of the printing","Lorem Ipsum has been the industry's standard","It has survived not only five centuries"," but also the leap into electronic typesetting","remaining essentially unchanged"],image:"../Images/recette2.jpg",category:"Pizza",commentaire:["Wooow beautifull recipe !!","s' il vous plait eexppliquer moi la méthode"],rating:10},
@@ -106,3 +131,4 @@ function displayRecipeDetails(recipe){
 }
 
 displayRecipeDetails();
+

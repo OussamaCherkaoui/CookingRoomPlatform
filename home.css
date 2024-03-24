@@ -29,15 +29,8 @@ nav{
 
 
 
-.hero-header img {
-    animation: imgRotate 50s linear infinite;
-}
 
-@keyframes imgRotate { 
-    100% { 
-        transform: rotate(360deg); 
-    } 
-}
+
 
 
 .btn {
@@ -93,7 +86,9 @@ nav{
     margin-bottom: -80px; 
 }
 
-
+#our-team{
+    margin-top: 50px;
+}
 
 
 
@@ -129,4 +124,12 @@ footer {
     text-align: center;
     margin-top: 10px;
     margin-bottom:40px ;
+  }
+
+
+  #Top-Rated-Recipes{
+    color: #FF4A00;
+  }
+  #team-color{
+    color: #FF4A00;
   }
