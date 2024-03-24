@@ -35,3 +35,74 @@ function submitRecipe() {
     document.querySelector('#imageUpload').value = ''; 
     document.querySelector('#category').value = '';
 }
+// Function display RecipeDetails
+function displayRecipeDetails(recipe){
+    const recipeDetailsContainer = document.querySelector('.recipe-details-container');
+    const recipeDetailsElement = document.createElement('div');
+    recipeDetailsElement.classList.add('recipe-details');
+    
+    const titleElement = document.createElement('h2');
+    titleElement.textContent = recipe.title;
+    recipeDetailsElement.appendChild(titleElement);
+    
+    const descriptionElement = document.createElement('p');
+    descriptionElement.textContent = recipe.description;
+    recipeDetailsContainer.appendChild(descriptionElement);
+
+    const ingredientsTitleElement = document.createElement('h3');
+    ingredientsTitleElement.textContent = 'Ingredients';
+    recipeDetailsContainer.appendChild(ingredientsTitleElement);
+
+    const ingredientsListElement = document.createElement('ul');
+    recipe.ingredients.forEach(ingredient => {
+        const ingredientItem = document.createElement('li');
+        ingredientItem.textContent = ingredient;
+        ingredientsListElement.appendChild(ingredientItem);
+    });
+    recipeDetailsElement.appendChild(ingredientsListElement);
+
+    const stepsTitleElement = document.createElement('h3');
+    stepsTitleElement.textContent = 'Steps';
+    recipeDetailsElement.appendChild(stepsTitleElement);
+
+    const stepsListElement = document.createElement('ol');
+    recipe.steps.forEach(step => {
+        const stepItem = document.createElement('li');
+        stepItem.textContent = step;
+        stepsListElement.appendChild(stepItem);
+    });
+    recipeDetailsElement.appendChild(stepsListElement);
+
+    const imageElement = document.createElement('img');
+    imageElement.src = recipe.image;
+    imageElement.alt = recipe.title;
+    recipeDetailsElement.appendChild(imageElement);
+
+    const categoryElement = document.createElement('p');
+    categoryElement.textContent = 'Category: ' + recipe.category;
+    recipeDetailsElement.appendChild(categoryElement);
+
+    if(recipe.commentaire && recipe.commentaire.length > 0){
+        const commentsTitleElement = document.createElement('h3');
+        commentsTitleElement.textContent = 'comments';
+        recipeDetailsContainer.appendChild(commentsTitleElement);
+
+        const commentsListElement = document.createElement('ul');
+        recipe.commentaire.forEach(comment =>{
+            const commentItem = document.createElement('li');
+            commentItem.textContent = comment;
+            commentsListElement.appendChild(commentItem);
+
+        });
+        recipeDetailsElement.appendChild(commentsListElement);     
+    }
+
+    const ratingElement = document.createElement('p');
+    ratingElement.textContent = 'Rating :'+ recipe.rating + '/10';
+    recipeDetailsElement.appendChild(ratingElement);
+
+    recipeDetailsContainer.innerHTML = '';
+    recipeDetailsContainer.appendChild(recipeDetailsElement);
+}
+
+displayRecipeDetails();
