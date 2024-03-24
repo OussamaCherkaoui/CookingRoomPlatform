@@ -69,20 +69,7 @@ function createPagination(totalPages) {
 
 //remplir drop-down par des catégorie
 
-category.forEach(cat => {
-  const link = document.createElement('a');
-  link.classList.add('dropdown-item');
-  link.href = '#';
-  link.textContent = cat;
-  link.setAttribute('data-category', cat);
-  
-  link.addEventListener('click', function() {
-    searchInput.value=""; 
-    const selectedCategory = this.getAttribute('data-category');
-    filterRecipesByCategory(selectedCategory);
-  });
-    dropdownMenu.appendChild(link);
-});
+
 
 function filterRecipesByCategory(category) {
   const filteredRecipes = recipes.filter(recipe => recipe.category === category);
@@ -115,8 +102,8 @@ function createRecipeCard(recipe) {
 
 const btnReadMore = card.querySelector('#btn-readMore');
   btnReadMore.addEventListener('click', () => {
-    window.location.href = `./RecipesDetails.html`;
-    displayRecipeDetails(recipe);
+  window.location.href = `./RecipesDetails.html`;
+  displayRecipeDetails(recipe);
   });
 
 
@@ -167,10 +154,11 @@ function displayRecipeCards(recipes,page) {
   });
   const totalDisplayedRecipes = recipes.length;
   const totalPagesDisplayed = Math.ceil(totalDisplayedRecipes / recipesPerPage);
-
- 
+  
+  
   createPagination(totalPagesDisplayed);
-  paginationSwitched(recipes)
+  paginationSwitched(recipes);
+
 }
 
 //affichage des recettes selon la pagination
@@ -179,7 +167,7 @@ function handlePageClick(page) {
   displayRecipeCards(recipes,currentPage);
 }
 
-displayRecipeCards(recipes,currentPage);
+
 
 function paginationSwitched(recipes){
   const paginationLinks = document.querySelectorAll('.page-link');
@@ -206,15 +194,7 @@ function searchRecipes() {
   displayRecipeCards(filteredRecipes,currentPage);
 }
 
-searchInput.addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    searchRecipes();
-  }
-});
 
-searchButton.addEventListener('click', function () {
-  searchRecipes();
-});
 
 //function Submit a Recipe
 function submitRecipe() {
@@ -235,7 +215,7 @@ function submitRecipe() {
         
     };
     recipes.push(newRecipe);
-    displayRecipes();
+
     document.querySelector('#recipeTitle').value = '';
     document.querySelector('#recipeDescription').value = '';
     document.querySelectorAll('.form-control-ingredient').forEach(input => input.value = '');
@@ -259,33 +239,67 @@ function displayRecipeDetails(recipe){
 
 
     const ingredient1 = document.getElementById('ingredient1');
-    ingredient1=recipe.ingredients[0];
+    ingredient1.textContent=recipe.ingredients[0];
     const ingredient2 = document.getElementById('ingredient2');
-    ingredient2=recipe.ingredients[1];
+    ingredient2.textContent=recipe.ingredients[1];
     const ingredient3 = document.getElementById('ingredient3');
-    ingredient3=recipe.ingredients[2];
+    ingredient3.textContent=recipe.ingredients[2];
     const ingredient4 = document.getElementById('ingredient4');
-    ingredient4=recipe.ingredients[3];
+    ingredient4.textContent=recipe.ingredients[3];
     const ingredient5 = document.getElementById('ingredient5');
-    ingredient5=recipe.ingredients[4];
+    ingredient5.textContent = recipe.ingredients[4];
     
 
     const step1 = document.getElementById('step1');
-    step1=recipe.steps[0];
+    step1.textContent=recipe.steps[0];
     const step2 = document.getElementById('step2');
-    step2=recipe.steps[1];
+    step2.textContent=recipe.steps[1];
     const step3 = document.getElementById('step3');
-    step3=recipe.steps[2];
+    step3.textContent =recipe.steps[2];
     const step4 = document.getElementById('step4');
-    step4=recipe.steps[3];
+    step4.textContent =recipe.steps[3];
     const step5 = document.getElementById('step5');
-    step5=recipe.steps[4];
+    step5.textContent =recipe.steps[4];
 
     const stars = document.querySelector(".stars");
     stars.innerHTML=`${displayrating(recipe)}`;
-    
 }
 
+
+
+displayRecipeCards(recipes,currentPage);
+
+
+
+searchInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    searchRecipes();
+  }
+});
+
+searchButton.addEventListener('click', function () {
+  searchRecipes();
+});
+
+
+
+
+
+
+category.forEach(cat => {
+  const link = document.createElement('a');
+  link.classList.add('dropdown-item');
+  link.href = '#';
+  link.textContent = cat;
+  link.setAttribute('data-category', cat);
+  
+  link.addEventListener('click', function() {
+    searchInput.value=""; 
+    const selectedCategory = this.getAttribute('data-category');
+    filterRecipesByCategory(selectedCategory);
+  });
+    dropdownMenu.appendChild(link);
+});
 
 //remplir categorie pour la page submit
 
@@ -301,6 +315,6 @@ category.forEach(cat => {
     const selectedCategory = this.getAttribute('data-category');
   });
 
+  dropdowncategorySubmit.appendChild(link);
   
 });
-
