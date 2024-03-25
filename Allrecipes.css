@@ -1,0 +1,93 @@
+#btnSubmit{
+    background-color: #FF4A00; 
+    color: white;
+    transition: color 0.3s ease-in-out;
+    border-style: none;
+}
+#btnSubmit:hover{
+    background-color: #FF4A00; 
+    color: rgb(0, 0, 0);
+}
+
+.navbar{
+    height: 70px;
+}
+.nav-link{
+    font-weight: 500;
+}
+.nav-link:hover,#nav-active{
+    color: #ff0000;  
+}
+.search{
+    background-color: #EFEFEF;
+}
+body{
+    margin: 0 ;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+#btn-readMore{
+    background-color: #ff0000;
+    color: white;
+    background-color: #ff0000;
+    color: white;
+    width: 120px;
+    margin-top: 20px;
+}
+.recipe{
+    width: 300px;
+    background-color: #EEE4E0;
+    padding: 0;
+    margin: 20px;
+    border-radius: 12px;
+}
+.etoile{
+    margin-left: 15px;
+}
+.page-item.active .page-link {
+    color: white;
+    background-color: black;
+}
+.page-link{
+    color: black;
+}
+footer {
+    background-color: #000000;
+    color: #B8B8B8; 
+    padding: 20px;
+    margin: 0;
+    width: 100%;
+  }
+  .social-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .social-icons li {
+    margin-right: 10px;
+  }
+  .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+  .logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+  
+  }
+  .logo-container img {
+    width: 150px; 
+    height: auto;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 10px;
+  
+  }
+svg.empty{
+    fill: transparent;
+    stroke: #000000;
+    stroke-width: 4px;
+}
