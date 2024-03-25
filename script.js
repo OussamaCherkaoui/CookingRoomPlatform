@@ -1,4 +1,5 @@
 
+
 //tables recipes et category
 let recipes = [
     {title:"Lemon Dijon Vina igrette Kale Quinoa",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover in the fridge for a 3 hours","add an extra 1/2 tsp salt","Preheat oven to 220C for 7 Minutes"],image:"../Images/recette1.jpg",category:"Salad",commentaire:["Wooow c' est une belle repas !!","combien de miel faut ajouter ?"],rating:10},
@@ -33,6 +34,33 @@ const btnReadMoreRecipe =document.querySelectorAll('#btn-readMore');
 
 const searchInput = document.getElementById('search-Input');
 const searchButton = document.querySelector('.input-group-text');
+
+
+
+// Filter recipes with top 3 ratings
+function getTopRatedRecipes(recipes) {
+    const sortedRecipes = recipes.slice().sort((a, b) => b.rating - a.rating);
+    // Return the top 3 recipes
+    return sortedRecipes.slice(0, 3);
+  }
+  
+  // Function to display top rated recipes on the home page
+  function displayTopRatedRecipes(recipes) {
+    const topRatedRecipes = getTopRatedRecipes(recipes);
+  
+    const topRatedContainer = document.getElementById('topRatedContainer');
+    topRatedContainer.innerHTML = ''; 
+  
+    topRatedRecipes.forEach(recipe => {
+      const card = createRecipeCard(recipe);
+      topRatedContainer.appendChild(card);
+    });
+  }
+  
+  // Call the function to display top rated recipes on page load
+  displayTopRatedRecipes(recipes);
+  
+
 
 //creation des link des paginations
 function createPaginationLink(pageNumber, isActive = false) {
@@ -266,7 +294,6 @@ function displayRecipeDetails(recipe){
 }
 
 
-
 displayRecipeCards(recipes,currentPage);
 
 
@@ -318,3 +345,4 @@ category.forEach(cat => {
   dropdowncategorySubmit.appendChild(link);
   
 });
+
