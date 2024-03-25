@@ -8,7 +8,7 @@ let recipes = [
     {title:"Kale Quinoa and Avocado",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover and marinate in the fridge for a minimum of 3 hours, 24 hours is ideal","If only 3 hours, add an extra 1/2 tsp salt","Preheat oven to 220C / 430F (standard) or 200C / 390F (fan / convection) for 7 Minutes"],image:"../Images/recette4.jpg",category:"Breakfast",commentaire:["Wooow c' est une belle recipe !!","combien de miel faut ajouter ?"],rating:50},
     {title:"Apple Salad with Lemon",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover and marinate in the fridge for a minimum of 3 hours, 24 hours is ideal","If only 3 hours, add an extra 1/2 tsp salt","Preheat oven to 220C / 430F (standard) or 200C / 390F (fan / convection) for 7 Minutes"],image:"../Images/recette5.jpg",category:"Salad",commentaire:["Wooow c' est une belle recipe !!","combien de miel faut ajouter ?"],rating:40},
     {title:"Spiced Pork and Pasta",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover and marinate in the fridge for a minimum of 3 hours, 24 hours is ideal","If only 3 hours, add an extra 1/2 tsp salt","Preheat oven to 220C / 430F (standard) or 200C / 390F (fan / convection) for 7 Minutes"],image:"../Images/recette6.jpg",category:"Pasta",commentaire:["Wooow c' est une belle recipe !!","combien de miel faut ajouter ?"],rating:0},
-    {title:"Lemon Dijon Vina igrette Kale Quinoa",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover in the fridge for a 3 hours","add an extra 1/2 tsp salt","Preheat oven to 220C for 7 Minutes"],image:"../Images/recette1.jpg",category:"Salad",commentaire:["Wooow c' est une belle repas !!","combien de miel faut ajouter ?"],rating:10},
+    {title:"aaaaaaaaaaaaaaaaaaaa",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover in the fridge for a 3 hours","add an extra 1/2 tsp salt","Preheat oven to 220C for 7 Minutes"],image:"../Images/recette1.jpg",category:"Salad",commentaire:["Wooow c' est une belle repas !!","combien de miel faut ajouter ?"],rating:10},
     {title:"Pizza Bar Mozzarella",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a", ingredients:["500 gm Cheese","200 gm Flower","2 1/4 teaspoons Active dry yeast","3 3/4 cups Bread Flour","3 piece Bell peppers"],steps:["simply dummy text of the printing","Lorem Ipsum has been the industry's standard","It has survived not only five centuries"," but also the leap into electronic typesetting","remaining essentially unchanged"],image:"../Images/recette2.jpg",category:"Pizza",commentaire:["Wooow beautifull recipe !!","s' il vous plait eexppliquer moi la méthode"],rating:30},
     {title:"Sunday Best Fruit Salad",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover and marinate in the fridge for a minimum of 3 hours, 24 hours is ideal","If only 3 hours, add an extra 1/2 tsp salt","Preheat oven to 220C / 430F (standard) or 200C / 390F (fan / convection) for 7 Minutes"],image:"../Images/recette3.jpg",category:"Dinner",commentaire:["Wooow c' est une belle recipe !!","combien de miel faut ajouter ?"],rating:10},
     {title:"Kale Quinoa and Avocado",description: "The doner is a Turkish creation of meat, often lamb, but not necessarily so, that is seasoned, stacked in a cone shape, and cooked slowly on a vertical rotisserie", ingredients:["1 kg lamb","4 gm Garlic","1 gm coriander","1 gm paprika","1/2 spoon salt"],steps:["Mix Marinade in a large bowl","Add chicken and mix to coat well","Cover and marinate in the fridge for a minimum of 3 hours, 24 hours is ideal","If only 3 hours, add an extra 1/2 tsp salt","Preheat oven to 220C / 430F (standard) or 200C / 390F (fan / convection) for 7 Minutes"],image:"../Images/recette4.jpg",category:"Breakfast",commentaire:["Wooow c' est une belle recipe !!","combien de miel faut ajouter ?"],rating:50},
@@ -38,15 +38,15 @@ const searchButton = document.querySelector('.input-group-text');
 
 
 // Filter recipes with top 3 ratings
-function getTopRatedRecipes(recipes) {
+function getTopRatedRecipes() {
     const sortedRecipes = recipes.slice().sort((a, b) => b.rating - a.rating);
     // Return the top 3 recipes
     return sortedRecipes.slice(0, 3);
   }
   
   // Function to display top rated recipes on the home page
-  function displayTopRatedRecipes(recipes) {
-    const topRatedRecipes = getTopRatedRecipes(recipes);
+  function displayTopRatedRecipes() {
+    const topRatedRecipes = getTopRatedRecipes();
   
     const topRatedContainer = document.getElementById('topRatedContainer');
     topRatedContainer.innerHTML = ''; 
@@ -57,8 +57,7 @@ function getTopRatedRecipes(recipes) {
     });
   }
   
-  // Call the function to display top rated recipes on page load
-  displayTopRatedRecipes(recipes);
+
   
 
 
@@ -130,8 +129,7 @@ function createRecipeCard(recipe) {
 
 const btnReadMore = card.querySelector('#btn-readMore');
   btnReadMore.addEventListener('click', () => {
-  window.location.href = `./RecipesDetails.html`;
-  displayRecipeDetails(recipe);
+  window.location.href = `./RecipesDetails.html?title=${recipe.title}`;
   });
 
 
@@ -226,35 +224,68 @@ function searchRecipes() {
 
 //function Submit a Recipe
 function submitRecipe() {
-    const recipeTitle = document.querySelector('#recipeTitle').value;
-    const recipeDescription = document.querySelector('#recipeDescription').value;
-    const ingredients = [...document.querySelectorAll('.form-control-ingredient')].map(input => input.value);
-    const steps = [...document.querySelectorAll('.form-control-step')].map(input => input.value);
-    const recipeImage = document.querySelector('#imageUpload').value; 
-    const recipeCategory = document.querySelector('#category').value;
+  const recipeTitle = document.getElementById('recipeTitle').value;
+  const recipeDescription = document.getElementById('recipeDescription').value;
 
-    const newRecipe = {
+  const ingredient1 = document.getElementById('ingredient1').value;
+  const ingredient2 = document.getElementById('ingredient2').value;
+  const ingredient3 = document.getElementById('ingredient3').value;
+  const ingredient4 = document.getElementById('ingredient4').value;
+  const ingredient5 = document.getElementById('ingredient5').value;
+
+  const step1 = document.getElementById('step1').value;
+  const step2 = document.getElementById('step2').value;
+  const step3 = document.getElementById('step3').value;
+  const step4 = document.getElementById('step4').value;
+  const step5 = document.getElementById('step5').value;
+
+  const recipeImage = document.getElementById('imageUpload').files[0].name; 
+  const imageParagraph = document.getElementById('imageParagraph');
+
+  if (recipeImage) {
+    if (recipeImage.type.startsWith('image/')) {
+      const imageURL = URL.createObjectURL(recipeImage);
+      imageParagraph.textContent = recipeImage;
+      const recipeCategory = document.getElementById("categorySelected").value;
+
+      const newRecipe = {
         title: recipeTitle,
         description: recipeDescription,
-        ingredients: ingredients,
-        steps: steps,
-        image: recipeImage,
+        ingredients: [ingredients1, ingredients2, ingredients3, ingredients4, ingredients5],
+        steps: [step1, step2, step3, step4, step5],
+        image: imageURL,
         category: recipeCategory,
-        
-    };
-    recipes.push(newRecipe);
+        commentaire: [],
+        rating: 0
+      };
 
-    document.querySelector('#recipeTitle').value = '';
-    document.querySelector('#recipeDescription').value = '';
-    document.querySelectorAll('.form-control-ingredient').forEach(input => input.value = '');
-    document.querySelectorAll('.form-control-step').forEach(input => input.value = '');
-    document.querySelector('#imageUpload').value = ''; 
-    document.querySelector('#category').value = '';
+      // Ajouter la nouvelle recette au tableau recipes (remplacez cette étape par votre logique d'ajout)
+      console.log(newRecipe);
+      alert("Recipe submitted");
+    } else {
+      imageParagraph.textContent = "Veuillez sélectionner une image au format PNG ou JPEG";
+    }
+  } else {
+    alert("Veuillez sélectionner une image.");
+  }
 }
+
+
 
 
 // Function display RecipeDetails
 function displayRecipeDetails(recipe){
+
+  let params = new URLSearchParams(location.search);
+  let titleseaerched=params.get('title');
+ 
+  const filteredRecipes = recipes.filter(recipe => recipe.title.includes(titleseaerched));
+
+  var recipe=filteredRecipes[0];
+
+  console.log(recipe);
+  console.log(filteredRecipes);
+
 
   const imageRecipe = document.getElementById('img-1');
   imageRecipe.style.background = `url("${recipe.image}") no-repeat top center/cover`;
@@ -294,25 +325,6 @@ function displayRecipeDetails(recipe){
 }
 
 
-displayRecipeCards(recipes,currentPage);
-
-
-
-searchInput.addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    searchRecipes();
-  }
-});
-
-searchButton.addEventListener('click', function () {
-  searchRecipes();
-});
-
-
-
-
-
-
 category.forEach(cat => {
   const link = document.createElement('a');
   link.classList.add('dropdown-item');
@@ -328,21 +340,51 @@ category.forEach(cat => {
     dropdownMenu.appendChild(link);
 });
 
-//remplir categorie pour la page submit
-
- 
-category.forEach(cat => {
-  const link = document.createElement('a');
-  link.classList.add('dropdown-item');
-  link.href = '#';
-  link.textContent = cat;
-  link.setAttribute('data-category', cat);
-  
-  link.addEventListener('click', function() {
-    const selectedCategory = this.getAttribute('data-category');
-  });
-
-  dropdowncategorySubmit.appendChild(link);
-  
+searchInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    searchRecipes();
+  }
 });
+
+searchButton.addEventListener('click', function () {
+  searchRecipes();
+});
+
+
+displayRecipeCards(recipes,currentPage);
+
+
+
+
+
+
+
+
+
+
+
+
+//remplir categorie pour la page submit
+function createCategorySubmit(){
+  
+  category.forEach(cat => {
+    const link = document.createElement('p');
+    link.classList.add('dropdown-item');
+    link.textContent = cat;
+    link.setAttribute('data-category', cat);
+    
+    link.addEventListener('click', function() {
+      const zonedropDown = document.getElementById("categorySelected");
+      zonedropDown.textContent = this.getAttribute('data-category');
+    });
+  
+    dropdowncategorySubmit.appendChild(link);
+    
+  });  
+  const buttonSubmit = document.getElementById('btn-submitrecipe');
+  buttonSubmit.addEventListener('click',()=>{
+  submitRecipe();
+});
+}
+ 
 
